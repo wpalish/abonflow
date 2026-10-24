@@ -1,0 +1,44 @@
+[
+  {
+    "collection": "passes",
+    "as": "p",
+    "data": {
+      "name": "TEST-ученик",
+      "units": 1,
+      "expires": "2099-12-31",
+      "status": "active"
+    }
+  },
+  {
+    "collection": "visits",
+    "as": "v",
+    "data": {
+      "pass": "$p",
+      "lesson": "TEST-1",
+      "date": "2099-10-25",
+      "status": "reserved"
+    },
+    "expect": "Свободно: 0"
+  },
+  {
+    "collection": "visits",
+    "error": "недостаточно",
+    "data": {
+      "pass": "$p",
+      "lesson": "TEST-2",
+      "date": "2099-10-26",
+      "status": "reserved"
+    }
+  },
+  {
+    "collection": "visits",
+    "id": "$v",
+    "data": {
+      "pass": "$p",
+      "lesson": "TEST-1",
+      "date": "2099-10-25",
+      "status": "cancelled"
+    },
+    "expect": "Свободно: 1"
+  }
+]
