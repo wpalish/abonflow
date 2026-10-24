@@ -451,7 +451,7 @@
       "refersTo": "panel",
       "description": "Shared form/restore surface, with source padding and border.",
       "html": "<section class=\"ds-panel\"><h2>Данные и доступ</h2><p>Восстановление в пустую базу</p></section>",
-      "css": ".ds-panel{font-family:system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;background:#fff;color:#172e45;border:1px solid var(--line,#b9cbd9);border-radius:12px;padding:1.4rem;min-width:0}.ds-panel h2{font-size:1.3rem;margin:0 0 0.75rem}.ds-panel p{max-width:72ch;line-height:1.6;margin:0.5rem 0 1rem}@media(max-width:700px){.ds-panel{padding:1rem}}"
+      "css": ".ds-panel{font-family:system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;background:#fff;color:#172e45;border:1px solid var(--line,#b9cbd9);border-radius:12px;padding:1.4rem;min-width:0}.ds-panel h2{font-size:1.3rem;margin:2rem 0 0.75rem}.ds-panel p{max-width:72ch;line-height:1.6;margin:0.5rem 0 1rem}@media(max-width:700px){.ds-panel{padding:1rem}}"
     },
     {
       "name": "Record table",

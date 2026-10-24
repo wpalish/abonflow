@@ -67,7 +67,6 @@ components:
     textColor: "{colors.surface}"
     rounded: "{rounded.control}"
     padding: "0.65rem 1rem"
-    height: "44px"
   button-primary-hover:
     backgroundColor: "{colors.primary-hover}"
     textColor: "{colors.surface}"
