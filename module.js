@@ -62,7 +62,9 @@ const definition = {
           "Посещения сохраняются; используйте отмену вместо архива.",
         );
         const old = changed(before, "visits", v.id);
-        if (!old && v.status !== "cancelled")
+        const startsConsumption =
+          !old || old.pass !== v.pass || old.status === "cancelled";
+        if (startsConsumption && v.status !== "cancelled")
           required(
             p.status === "active" && !p.archived,
             "Абонемент приостановлен или архивирован.",

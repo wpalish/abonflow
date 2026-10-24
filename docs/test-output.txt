@@ -1,34 +1,40 @@
 TAP version 13
-# Subtest: AbonFlow: complete original workflow, calculation and rejected invalid transition
-ok 1 - AbonFlow: complete original workflow, calculation and rejected invalid transition
+# Subtest: paused passes reject revived/cross-pass consumption while existing reservations can be settled
+ok 1 - paused passes reject revived/cross-pass consumption while existing reservations can be settled
   ---
-  duration_ms: 6.833083
+  duration_ms: 5.674834
+  type: 'test'
+  ...
+# Subtest: AbonFlow: complete original workflow, calculation and rejected invalid transition
+ok 2 - AbonFlow: complete original workflow, calculation and rejected invalid transition
+  ---
+  duration_ms: 2.385834
   type: 'test'
   ...
 # Subtest: real file restart, optimistic conflict and validated restore into an empty database
-ok 2 - real file restart, optimistic conflict and validated restore into an empty database
+ok 3 - real file restart, optimistic conflict and validated restore into an empty database
   ---
-  duration_ms: 3.231375
+  duration_ms: 3.716666
   type: 'test'
   ...
 # Subtest: HTTP prevents anonymous reads and cross-origin/CSRF writes while authenticated workflow saves
-ok 3 - HTTP prevents anonymous reads and cross-origin/CSRF writes while authenticated workflow saves
+ok 4 - HTTP prevents anonymous reads and cross-origin/CSRF writes while authenticated workflow saves
   ---
-  duration_ms: 80.473917
+  duration_ms: 74.800834
   type: 'test'
   ...
 # Subtest: two products on one host use isolated session cookies and preserve both logins
-ok 4 - two products on one host use isolated session cookies and preserve both logins
+ok 5 - two products on one host use isolated session cookies and preserve both logins
   ---
-  duration_ms: 88.994625
+  duration_ms: 87.367791
   type: 'test'
   ...
-1..4
-# tests 4
+1..5
+# tests 5
 # suites 0
-# pass 4
+# pass 5
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 227.346083
+# duration_ms 218.332375

@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-24",
+  "defect": "Previously only a new visit row checked that its pass was active. Editing a cancelled visit or moving an existing visit to a paused pass bypassed that condition.",
+  "reproduction_before_fix": "New regression test failed at the first cancelled→reserved transition with Missing expected exception.",
+  "fix": "Check new consumption on new visit, pass change or previous cancellation. Preserve fulfilment/cancellation of existing reservation on same pass.",
+  "tests": {
+    "passed": 5,
+    "failed": 0,
+    "runtime": "v24.19.0",
+    "log": "docs/test-output.txt",
+    "regression": "tests/pause.test.js",
+    "covered": [
+      "cancelled→reserved and cancelled→attended rejected on paused pass",
+      "cross-pass reservation/attendance rejected on paused destination",
+      "fresh reservation rejected while paused",
+      "same-pass previous reservation may be fulfilled",
+      "attended visit remains immutable",
+      "validated backup with paused historical records restores correctly and still blocks revival",
+      "explicit unpause permits rebooking cancelled visit"
+    ]
+  },
+  "browser": {
+    "data": "synthetic only, separate localhost8820 instance",
+    "rejected_changes": [
+      "cancelled→reserved",
+      "cancelled→attended"
+    ],
+    "before": {
+      "revision": 4,
+      "audit_events": 4
+    },
+    "after_rejections": {
+      "revision": 4,
+      "audit_events": 4,
+      "data_unchanged": true
+    },
+    "after_allowed_settlement": {
+      "revision": 5,
+      "audit_events": 5,
+      "attended": 1,
+      "reserved": 0,
+      "free": 2
+    },
+    "reload": "cancelled and attended statuses plus free2 read back after reload",
+    "screens": [
+      "docs/pause-rejected.jpg",
+      "docs/pause-settled.jpg"
+    ]
+  },
+  "limits": "Domain fix only. No new payment, freeze extension, notification, hosting or integration claim."
+}
