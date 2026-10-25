@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-25",
+  "product": "abonflow",
+  "baseline_commit": "171a4a1dc2ba0f21688d6cede692737af5a4de1b",
+  "defect": "Cancelled-lesson editor omitted saved archived pass;required selector became empty and browser blocked saving",
+  "before_fix": {
+    "selector": {
+      "missing": true,
+      "options": [
+        "Выберите значение",
+        "SYNTHETIC live pass"
+      ],
+      "value": ""
+    },
+    "baseline_lifecycle_controls_passed": 2,
+    "note": "Added controls passed unchanged module/server baseline. Consumption, pause, cancellation, immutable attendance and restart/restore guards already worked."
+  },
+  "change": "UI options retain current archived pass with Archive label;other archives/new form archives excluded. Domain/server/schema unchanged.",
+  "policy_limits": [
+    "Cancelled code/date correction is allowed without consumption and may explicitly retarget to a live pass. No new immutability for cancelled links.",
+    "The existing API also allows non-consuming cancelled records on archived passes;new UI forms offer live passes only. New/reopened/retargeted consumption remains rejected for paused/archived passes.",
+    "Recorded attendance remains immutable. Manual attendance is not proof of a lesson actually taking place."
+  ],
+  "tests": {
+    "passed": 7,
+    "failed": 0,
+    "runtime": "v24.19.0",
+    "log": "docs/test-output.txt",
+    "lifecycle": "tests/history.test.js",
+    "baseline_controls": "docs/history-baseline-controls.txt",
+    "coverage": [
+      "cancelled history code/date correction retains pass/status/remaining units",
+      "existing new/reopen/retarget archive consumption guards preserve complete state/audit",
+      "reserved pass archive rejection and attended immutability",
+      "explicit cancelled link correction to live pass remains allowed",
+      "real file restart and empty restore preserve history/remaining units",
+      "prior pause regression/auth/CSRF/Origin/conflict checks retained"
+    ]
+  },
+  "browser": {
+    "data": "synthetic only,localhost8841",
+    "selector_after": {
+      "missing": false,
+      "options": [
+        "Выберите значение",
+        "SYNTHETIC archived history · Архив",
+        "SYNTHETIC live pass"
+      ],
+      "selected": "SYNTHETIC archived history · Архив",
+      "value": "eedc727d-e29c-49c7-93a5-840184d339a7"
+    },
+    "existing_api_guards": {
+      "existing_controls_not_new_server_fix": true,
+      "all6_rejections_preserved_entire_state_and_audit": true,
+      "revision": 8,
+      "audit_events": 8,
+      "results": [
+        {
+          "kind": "new_reserved",
+          "status": 400,
+          "error": "Абонемент приостановлен или архивирован."
+        },
+        {
+          "kind": "reopen_cancelled",
+          "status": 400,
+          "error": "Абонемент приостановлен или архивирован."
+        },
+        {
+          "kind": "reopen_attended",
+          "status": 400,
+          "error": "Абонемент приостановлен или архивирован."
+        },
+        {
+          "kind": "retarget_reserved",
+          "status": 400,
+          "error": "Абонемент приостановлен или архивирован."
+        },
+        {
+          "kind": "archive_reserved_pass",
+          "status": 400,
+          "error": "Сначала отмените или проведите резерв."
+        },
+        {
+          "kind": "change_attended",
+          "status": 400,
+          "error": "Утверждённую запись нельзя менять. Создайте новую версию."
+        }
+      ]
+    },
+    "reopen_rejection": {
+      "all_data_balances_revision_audit_unchanged": true,
+      "revision": 8,
+      "audit_events": 8
+    },
+    "saved_and_reloaded": {
+      "saved_archived_pass_retained": true,
+      "cancelled_lesson_code_and_date_saved": true,
+      "cancelled_status_unchanged": true,
+      "archived_pass_remaining_units": 2,
+      "other_archived_pass_not_offered": true,
+      "new_form_only_live_passes": true,
+      "all_passes_and_previous_attended_and_reserved_visits_unchanged": true,
+      "new_live_reservation_saved": true,
+      "reload_four_visits": true,
+      "revision": 10,
+      "audit_events": 10
+    },
+    "screens": [
+      "docs/history-before.jpg",
+      "docs/history-archive-selected.jpg",
+      "docs/history-reopen-rejected.jpg",
+      "docs/history-reloaded.jpg"
+    ]
+  },
+  "runtime": {
+    "main_pid": 93310,
+    "restarted": false,
+    "evidence": "work/program/runtime-checks/abonflow-history-20261025",
+    "reason": "Static app.js only;served hash matches local new file,no-cache.18 state/revision/audit snapshots unchanged."
+  },
+  "limits": [
+    "No new full-interface or external security audit",
+    "No payments,automatic extension,messaging or customer acceptance"
+  ]
+}

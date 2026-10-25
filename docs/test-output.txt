@@ -1,40 +1,52 @@
 TAP version 13
-# Subtest: paused passes reject revived/cross-pass consumption while existing reservations can be settled
-ok 1 - paused passes reject revived/cross-pass consumption while existing reservations can be settled
+# Subtest: cancelled history can be corrected without consumption; archived passes still reject new/reopened/retargeted consumption
+ok 1 - cancelled history can be corrected without consumption; archived passes still reject new/reopened/retargeted consumption
   ---
-  duration_ms: 5.674834
+  duration_ms: 5.240208
+  type: 'test'
+  ...
+# Subtest: file restart and empty restore retain archived pass/cancelled visit and balances
+ok 2 - file restart and empty restore retain archived pass/cancelled visit and balances
+  ---
+  duration_ms: 5.014916
+  type: 'test'
+  ...
+# Subtest: paused passes reject revived/cross-pass consumption while existing reservations can be settled
+ok 3 - paused passes reject revived/cross-pass consumption while existing reservations can be settled
+  ---
+  duration_ms: 4.688542
   type: 'test'
   ...
 # Subtest: AbonFlow: complete original workflow, calculation and rejected invalid transition
-ok 2 - AbonFlow: complete original workflow, calculation and rejected invalid transition
+ok 4 - AbonFlow: complete original workflow, calculation and rejected invalid transition
   ---
-  duration_ms: 2.385834
+  duration_ms: 2.709333
   type: 'test'
   ...
 # Subtest: real file restart, optimistic conflict and validated restore into an empty database
-ok 3 - real file restart, optimistic conflict and validated restore into an empty database
+ok 5 - real file restart, optimistic conflict and validated restore into an empty database
   ---
-  duration_ms: 3.716666
+  duration_ms: 5.594709
   type: 'test'
   ...
 # Subtest: HTTP prevents anonymous reads and cross-origin/CSRF writes while authenticated workflow saves
-ok 4 - HTTP prevents anonymous reads and cross-origin/CSRF writes while authenticated workflow saves
+ok 6 - HTTP prevents anonymous reads and cross-origin/CSRF writes while authenticated workflow saves
   ---
-  duration_ms: 74.800834
+  duration_ms: 71.405833
   type: 'test'
   ...
 # Subtest: two products on one host use isolated session cookies and preserve both logins
-ok 5 - two products on one host use isolated session cookies and preserve both logins
+ok 7 - two products on one host use isolated session cookies and preserve both logins
   ---
-  duration_ms: 87.367791
+  duration_ms: 87.664542
   type: 'test'
   ...
-1..5
-# tests 5
+1..7
+# tests 7
 # suites 0
-# pass 5
+# pass 7
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 218.332375
+# duration_ms 219.298042

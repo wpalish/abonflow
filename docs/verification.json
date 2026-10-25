@@ -4,7 +4,7 @@
   "runtime": "Node 24.19.0",
   "tests": {
     "slug": "abonflow",
-    "tests": 5,
+    "tests": 7,
     "pass": true,
     "runtime": "v24.19.0"
   },
@@ -38,8 +38,8 @@
     "result": "visible_label_and_no_results_recovery_passed"
   },
   "followup": {
-    "date": "2026-10-24",
-    "change": "Pause consumption bypass fixed",
-    "evidence": "docs/pause-verification.json"
+    "date": "2026-10-25",
+    "change": "Keep saved archived pass selected for cancelled-lesson edit;server rules already worked",
+    "evidence": "docs/history-verification.json"
   }
 }
