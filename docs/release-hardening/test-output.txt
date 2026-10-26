@@ -1,0 +1,42 @@
+✔ committed revocation remains confirmed after refresh failure; retry refresh never resends mutation (12.095875ms)
+✔ refused revocation retains its action and focuses the real refusal without success claim (1.863542ms)
+✔ created account is confirmed once even when its follow-up list fails (3.619625ms)
+✔ protected and logout401 clear stale identity and expose login without page reload (2.946291ms)
+✔ login401 preserves the current login form instead of recursively reopening it (3.712375ms)
+✔ CLI rejects implicit paths, duplicates and unsupported options (2.038833ms)
+✔ running WAL full snapshot preserves accounts, sessions, failures, domain data and audit across restore/restart (695.770458ms)
+✔ corrupt, wrong-product, unsupported-schema and invalid-domain inputs never publish a restore (679.266ms)
+✔ existing outputs, sidecars and symlinks are refused without replacing or following targets (402.196834ms)
+✔ concurrent snapshot publishers never overwrite the winning new destination (179.711417ms)
+✔ unsafe writable output directories and source sidecar symlinks fail closed (217.136334ms)
+✔ cancelled history can be corrected without consumption; archived passes still reject new/reopened/retargeted consumption (16.898ms)
+✔ file restart and empty restore retain archived pass/cancelled visit and balances (14.318291ms)
+✔ paused passes reject revived/cross-pass consumption while existing reservations can be settled (17.144333ms)
+✔ pass detail balance preserves cancellation and archived-history semantics (0.926959ms)
+✔ AbonFlow: complete original workflow, calculation and rejected invalid transition (7.086542ms)
+✔ real file restart, optimistic conflict and validated restore into an empty database (8.283167ms)
+✔ HTTP prevents anonymous reads and cross-origin/CSRF writes while authenticated workflow saves (343.933333ms)
+✔ two products on one host use isolated session cookies and preserve both logins (231.015042ms)
+✔ first boot refuses missing owner secret without creating a database (5.115292ms)
+✔ external plaintext, credentials in origin and ambiguous production data paths fail closed (1.470542ms)
+✔ invalid runtime, bind address, port and bootstrap credentials are rejected (3.365125ms)
+✔ preflight reads an existing owner without creating or rotating accounts (163.526792ms)
+✔ preflight refuses foreign databases and symlinks without changing the file (2.232083ms)
+✔ start refuses unsafe production config before touching its database (140.330958ms)
+✔ cold start, health command, graceful restart and saved sessions work on a real file (464.76425ms)
+✔ configured HTTPS proxy origin sets Secure cookies and keeps exact Host and Origin checks (215.647167ms)
+✔ production requires private process-owned database files, sidecars and a real parent directory (64.119875ms)
+✔ health command has an absolute deadline even when a responder continuously trickles bytes (2101.766667ms)
+✔ admin account summary exposes only factual active-session metadata; employee access is denied (676.342042ms)
+✔ session revocation enforces admin, Origin and CSRF, preserves the requesting session and audits without tokens (314.399ms)
+✔ unexpected errors are generic500 while intentional statuses and duplicate-name behavior survive (300.058375ms)
+✔ invalid calendar dates produce intentional validation problems instead of RangeError (1.318917ms)
+✔ health reports only product/status, requires DB and admin, and does not create sessions (155.616042ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3512.863041
