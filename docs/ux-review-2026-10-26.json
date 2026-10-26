@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-26",
+  "base_commit": "ad42f334807e3ce486e1fb6b57f633def58e2b6c",
+  "change": "workflow guide, reference-aware empty state, contextual record actions, mobile navigation and collection deep links",
+  "automated_tests": {
+    "name": "abonflow",
+    "exit": 0,
+    "seconds": 0.83,
+    "tests": 7,
+    "pass": 7,
+    "fail": 0
+  },
+  "automated_command": "Node v24.19.0: node --test tests/*.test.js",
+  "browser": {
+    "name": "abonflow",
+    "passed": true,
+    "checks": [
+      "guide starts collapsed",
+      "workflow navigation",
+      "synthetic form save",
+      "saved record reaches server",
+      "reload retains record and count",
+      "search reset restores list",
+      "column header semantics",
+      "navigation and filtering never write data",
+      "mobile populated list",
+      "no JavaScript errors"
+    ]
+  },
+  "capture_widths": [
+    390,
+    768,
+    1440
+  ],
+  "synthetic_data_only": true,
+  "scope_limits": [
+    "No live customer or market validation",
+    "No full accessibility conformance assessment",
+    "Repository domain logic unchanged; checks cover this UX increment"
+  ],
+  "files_sha256": {
+    "public/app.js": "78bebc60e480481d9033ce4a67e96352ca67dacb8b1bf13799791b3bfa73cf65",
+    "public/styles.css": "996d66136f461d589290afa3eca5b5cad2aa0539e529d23febf69086b0ee20af",
+    "public/workspace-guide.js": "adaaf6536f56d337ea17ed308af7ac04862daa2e4ee71aa2f31a8b8e1bef1778",
+    "core/server.js": "fefbb05ed9a109e50c494b40ba1fd83f9fe0a34ec298753ce539c3e6cab50923"
+  }
+}
